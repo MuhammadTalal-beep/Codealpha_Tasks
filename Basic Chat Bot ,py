@@ -1,0 +1,52 @@
+"""Simple rule-based chatbot
+
+Responds to a handful of fixed inputs:
+  * hello -> Hi!
+  * how are you -> I'm fine, thanks!
+  * bye -> Goodbye!
+
+Loops until user says bye (case-insensitive). Demonstrates if/elif, functions,
+and basic I/O.
+"""
+
+import random
+
+
+def get_response(user_input: str) -> str:
+    msg = user_input.strip().lower()
+    # simple rule-based replies with some variety
+    if msg in ("hello", "hi", "hey"):
+        return random.choice(["Hi!", "Hello there!", "Hey!"])
+    elif msg in ("how are you", "how r you", "how are u"):
+        return random.choice(["I'm fine, thanks!", "Doing well, you?", "All good here."])
+    elif msg in ("what's up", "whats up", "sup"):
+        return random.choice(["Not much, you?", "Just chatting with you.", "All quiet on my side."])
+    elif msg in ("thank you", "thanks"):
+        return "You're welcome!"
+    elif msg == "who are you":
+        return "I'm a simple chatbot built in Python."
+    elif msg == "what can you do":
+        return "I can respond to a few phrases and pretend to be smart."
+    elif msg == "bye":
+        return "Goodbye!"
+    else:
+        # some generic fallback options
+        return random.choice([
+            "Sorry, I don't understand.",
+            "Could you rephrase that?",
+            "I'm not sure what you mean.",
+        ])
+
+
+def main() -> None:
+    print("Simple chatbot (type 'bye' to exit)")
+    while True:
+        user = input("You: ")
+        reply = get_response(user)
+        print(f"Bot: {reply}")
+        if user.strip().lower() == "bye":
+            break
+
+
+if __name__ == '__main__':
+    main()
