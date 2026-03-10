@@ -11,3 +11,4 @@ A collection of practical Python projects, automation scripts, and programming s
 | **Project 1** | Hangman Game  | `Hangman Game`, `Logic` |
 | **Project 2** | Stock Portfolio Tracker     |  'Calculations' |
 | **Project 3** | jpg mover     |  'utilities' |
+| **Project 4** | Basic Chatbot     |  'utilities' |
